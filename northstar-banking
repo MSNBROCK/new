@@ -1,0 +1,179 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northstar Banking Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">NORTHSTAR BANK</div>
+    <span class="demo">COLLEGE PROJECT · SIMULATOR</span>
+</header>
+
+<main>
+
+<!-- LOGIN -->
+<section id="loginPage" class="card login">
+    <h1>Welcome Back</h1>
+    <p>Customer Banking Portal</p>
+
+    <label>Client ID</label>
+    <input id="clientId" placeholder="Enter Client ID">
+
+    <label>Password</label>
+    <input id="password" type="password" placeholder="Enter Password">
+
+    <button onclick="login()">LOGIN</button>
+    <p id="loginError" class="error"></p>
+</section>
+
+<!-- DASHBOARD -->
+<section id="dashboard" class="hidden">
+
+    <div class="card">
+        <div class="row">
+            <div>
+                <h2 id="welcome"></h2>
+                <p id="userId"></p>
+            </div>
+            <button class="logout" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="balance">
+            <small>Available Balance (Sample)</small>
+            <h1 id="balance">₹0</h1>
+        </div>
+    </div>
+
+    <div class="grid">
+        <div class="card">
+            <h3>Total Balance</h3>
+            <h2 id="totalBalance">₹0</h2>
+        </div>
+
+        <div class="card">
+            <h3>Investment Amount</h3>
+            <h2 id="investment">₹0</h2>
+        </div>
+
+        <div class="card">
+            <h3>JIO IPO Amount</h3>
+            <h2 id="ipo">₹0</h2>
+        </div>
+    </div>
+
+    <!-- WITHDRAWAL -->
+    <div class="card">
+        <h2>Withdrawal Request</h2>
+        <p>Practice withdrawal workflow</p>
+
+        <label>Enter Amount</label>
+        <input type="number" id="withdrawAmount" placeholder="Enter amount">
+
+        <button onclick="startWithdrawal()">CONTINUE</button>
+        <p id="withdrawError" class="error"></p>
+    </div>
+
+    <!-- TERMS -->
+    <div id="termsSection" class="card hidden">
+        <h2>Terms & Conditions</h2>
+
+        <div class="terms" id="termsBox">
+            <h3>Northstar Banking Simulator Agreement</h3>
+            <p>1. This is an educational banking simulator.</p>
+            <p>2. All balances and withdrawal amounts are fictional.</p>
+            <p>3. No real money will be transferred.</p>
+            <p>4. No actual banking service is provided.</p>
+            <p>5. KYC is demonstrated using sample information only.</p>
+            <p>6. Never submit real Aadhaar, PAN or bank credentials.</p>
+            <p>7. Agreeing records only a simulated action.</p>
+            <p>8. All tracking statuses are illustrative.</p>
+        </div>
+
+        <p id="scrollMessage">Scroll to the bottom to enable Agree.</p>
+
+        <button id="agreeBtn" disabled onclick="showKyc()">AGREE</button>
+        <button class="disagree" onclick="cancelWithdrawal()">DISAGREE</button>
+    </div>
+
+    <!-- KYC -->
+    <div id="kycSection" class="card hidden">
+        <h2>Customer KYC Demonstration</h2>
+        <p>Complete the sample verification checklist.</p>
+
+        <div class="steps">
+            <span>01 Personal</span>
+            <span>02 Documents</span>
+            <span>03 Review</span>
+        </div>
+
+        <label>Customer Name</label>
+        <input id="kycName" placeholder="Sample customer name">
+
+        <label>Sample Reference ID</label>
+        <input id="kycRef" placeholder="SAMPLE-001">
+
+        <h3>Document Checklist</h3>
+
+        <label class="check">
+            <input type="checkbox" class="doc"> PAN document (sample)
+        </label>
+
+        <label class="check">
+            <input type="checkbox" class="doc"> Aadhaar document (sample)
+        </label>
+
+        <label class="check">
+            <input type="checkbox" class="doc"> Address proof (sample)
+        </label>
+
+        <label class="check">
+            <input type="checkbox" class="doc"> Bank proof (sample)
+        </label>
+
+        <button onclick="submitKyc()">SUBMIT KYC</button>
+        <p id="kycError" class="error"></p>
+    </div>
+
+    <!-- SUCCESS -->
+    <div id="successSection" class="card hidden">
+        <h2 class="success">✓ Submission Successful</h2>
+
+        <p>Demo KYC checklist submitted successfully.</p>
+
+        <h3>Reference Number</h3>
+        <h2 id="reference"></h2>
+
+        <h3>Withdrawal Amount</h3>
+        <h2 id="finalAmount"></h2>
+
+        <h2>30-Day Tracking</h2>
+
+        <p>This is an illustrative timeline, not actual payment processing.</p>
+
+        <div class="timeline" id="timeline"></div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="card">
+        <h2>Withdrawal History</h2>
+        <div id="history">No requests yet.</div>
+    </div>
+
+</section>
+
+</main>
+
+<footer>
+    NORTHSTAR BANKING MANAGEMENT SYSTEM<br>
+    College Project · Fictional Banking Simulator
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+```
